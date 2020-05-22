@@ -1,0 +1,13 @@
+{
+  "name": "xstate-react-examples",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jinglesthula/xstate-react-examples.git",
+  "author": "Jon Anderson <jonathan.anderson@byu.edu>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "toggle",
+    "counter"
+  ]
+}
