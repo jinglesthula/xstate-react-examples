@@ -1,5 +1,6 @@
 import React from 'react'
 import { Machine, assign } from 'xstate'
+import { column, row, diagonal, cats } from './logic'
 
 export const MachineContext = React.createContext()
 
@@ -8,24 +9,6 @@ const initialBoard = [
   [null, null, null],
   [null, null, null],
 ]
-
-const column = (board) =>
-  [0, 1, 2].some(
-    (col) =>
-      board[0][col] &&
-      board[0][col] === board[1][col] &&
-      board[1][col] === board[2][col],
-  )
-
-const row = (board) =>
-  board.some((row, index) => row[0] && row[0] === row[1] && row[1] === row[2])
-
-const diagonal = (board) =>
-  board[1][1] &&
-  ((board[0][0] === board[1][1] && board[1][1] === board[2][2]) ||
-    (board[0][2] === board[1][1] && board[1][1] === board[2][0]))
-
-const cats = (board) => !board.some((row) => !row[0] || !row[1] || !row[2])
 
 export const TicTacToeMachine = Machine(
   {
