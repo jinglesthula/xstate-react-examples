@@ -8,6 +8,8 @@ const Button = styled.button`
   width: 4rem;
   font-size: 3rem;
 `
+
+// TODO: the cell should simply be passed an onClick prop (as it is), but this file should know nothing of the context or machine.  Handle that in the Board component, methinks.
 export const CellUI = ({ player, onClick }) => (
   <td>
     <Button onClick={onClick} disabled={!!player}>
